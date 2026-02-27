@@ -1,3 +1,4 @@
+using QuantityMeasurementMain.BusinessLayer;
 using QuantityMeasurementMain.ModelLayer;
 
 namespace QuantityMeasurementMain.ControlLayer
@@ -9,30 +10,36 @@ namespace QuantityMeasurementMain.ControlLayer
             System.Console.WriteLine("Welcomme to Quantity Measurement App");
             while (true)
             {
-                System.Console.WriteLine("1.Check Feet Equality \n2.Check Inche Equality \n0.Exit");
+                System.Console.WriteLine("1.check Lengths Equality \n0.Exit");
                 System.Console.WriteLine("Enter your choice");
-                int choice=int.Parse(Console.ReadLine());
+                
+                if (!int.TryParse(Console.ReadLine(), out int choice))
+                {
+                    Console.WriteLine("invalid input");
+                    continue;
+                }
                 switch (choice)
                 {
                     case 0:
                         return;
                     case 1:
-                        System.Console.Write("Enter first feet input:");
+                        System.Console.Write("Enter first  input:");
                         double input1=double.Parse(Console.ReadLine());
-                        System.Console.Write("Enter second feet Input:");
+                        System.Console.Write("unit  for first input :");
+                        if (!Enum.TryParse(Console.ReadLine(), true, out Length.LengthUnit unit1))
+                        {
+                            Console.WriteLine("Invalid unit");
+                            return;
+                        }
+                        System.Console.Write("Enter second  Input:");
                         double input2=double.Parse(Console.ReadLine());
-                        Feet feet1=new Feet(input1);
-                        Feet feet2=new Feet(input2);
-                        System.Console.WriteLine($"Input {feet1.Value} and {feet2.Value} are equal : {feet1.Equals(feet2)}");
-                        break;
-                    case 2:
-                        System.Console.Write("Enter first feet input:");
-                        double inchInput1=double.Parse(Console.ReadLine());
-                        System.Console.Write("Enter second feet Input:");
-                        double inchInput2=double.Parse(Console.ReadLine());
-                        Inch inch1=new Inch(inchInput1);
-                        Inch inch2=new Inch(inchInput2);
-                        System.Console.WriteLine($"Input {inch1.Value} and {inch2.Value} are equal : {inch1.Equals(inch2)}");
+                        System.Console.Write("unit  for second input :");
+                        if (!Enum.TryParse(Console.ReadLine(), true, out Length.LengthUnit unit2))
+                        {
+                            Console.WriteLine("Invalid unit");
+                            return;
+                        }
+                        System.Console.WriteLine($"{input1} {unit1} and {input2} {unit2} are equal: {LengthEqualityUtility.CheckEquality(input1,unit1,input2,unit2)}"); 
                         break;
                 }
             }
