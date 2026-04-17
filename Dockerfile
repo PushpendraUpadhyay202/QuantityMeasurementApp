@@ -16,5 +16,5 @@ RUN dotnet publish "WebApiLayer/WebApiLayer.csproj" -c Release -o /app/publish
 # Final
 FROM base AS final
 WORKDIR /app
-COPY --from=build /app/publish .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "WebApiLayer.dll"]
