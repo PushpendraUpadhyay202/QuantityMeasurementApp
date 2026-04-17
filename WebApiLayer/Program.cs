@@ -27,14 +27,10 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins(
-            "http://localhost:5500",
-            "http://127.0.0.1:5500",
-            "http://localhost:4200",
-            "https://your-frontend.onrender.com"  // apna frontend URL yahan baad mein daalna
-        )
+        policy.AllowAnyOrigin()// apna frontend URL yahan baad mein daalna
+        
         .AllowAnyMethod()
         .AllowAnyHeader();
     });
@@ -97,7 +93,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseCors("AllowFrontend");
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
