@@ -7,7 +7,11 @@ EXPOSE 10000
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet restore "WebApiLayer/WebApiLayer.csproj"
+RUN dotnet build "WebApiLayer/WebApiLayer.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "WebApiLayer/WebApiLayer.csproj" -c Release -o /app/publish
 
 # Final
 FROM base AS final

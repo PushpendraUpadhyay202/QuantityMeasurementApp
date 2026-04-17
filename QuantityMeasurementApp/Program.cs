@@ -1,7 +1,7 @@
 ﻿using QuantityMeasurementApp.Config;
 using QuantityMeasurementApp.Factories;
 using QuantityMeasurementApp.Interfaces;
-using RepoLayer.Database;
+// using RepoLayer.Database;
 
 namespace QuantityMeasurementApp
 {
@@ -12,7 +12,7 @@ namespace QuantityMeasurementApp
             string connectionString = AppConfig.GetConnectionString();
 
             DatabaseInitializer.Initialize(connectionString);
-
+ 
             IMenuFactory factory = new MenuFactory();
 
             IQuantityMeasurementAppMenu menu = factory.CreateMenu();
