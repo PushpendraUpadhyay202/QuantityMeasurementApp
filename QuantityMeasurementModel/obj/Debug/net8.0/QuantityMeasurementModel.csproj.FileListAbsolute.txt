@@ -1,0 +1,12 @@
+D:\QMA_Backend\QuantityMeasurementModel\bin\Debug\net8.0\QuantityMeasurementModel.deps.json
+D:\QMA_Backend\QuantityMeasurementModel\bin\Debug\net8.0\QuantityMeasurementModel.dll
+D:\QMA_Backend\QuantityMeasurementModel\bin\Debug\net8.0\QuantityMeasurementModel.pdb
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.AssemblyInfoInputs.cache
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.AssemblyInfo.cs
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.csproj.CoreCompileInputs.cache
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.sourcelink.json
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.dll
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\refint\QuantityMeasurementModel.dll
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\QuantityMeasurementModel.pdb
+D:\QMA_Backend\QuantityMeasurementModel\obj\Debug\net8.0\ref\QuantityMeasurementModel.dll
